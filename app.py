@@ -207,6 +207,19 @@ class TourismApp:
             height=35
         )
 
+        def open_url(url):
+            webbrowser.open_new_tab(url)
+
+        tn_link = tk.Label(self.sidebar_frame, text="🏞 Official TN Tourism", font=("Arial", 10),
+                           bg=self.green, fg="white", cursor="hand2")
+        tn_link.place(x=15, y=500)
+        tn_link.bind("<Button-1>", lambda e: open_url("https://www.tamilnadutourism.tn.gov.in/"))
+
+        map_link = tk.Label(self.sidebar_frame, text="🌎 Google Maps", font=("Arial", 10),
+                            bg=self.green, fg="white", cursor="hand2")
+        map_link.place(x=15, y=525)
+        map_link.bind("<Button-1>", lambda e: open_url("https://maps.google.com/?q=Tamil+Nadu"))
+
     def toggle_sidebar(self):
         self.sidebar_open = not self.sidebar_open
 
